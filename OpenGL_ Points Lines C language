@@ -1,0 +1,40 @@
+
+// I am saving code name as PontLi.c 
+
+#include <windows.h>                                   //Using the code in Codeblocks first ensure the environment variables are set
+#include <GL/glut.h>                                   // Start directly in case of Ubuntu
+void display() {
+   glClear(GL_COLOR_BUFFER_BIT);
+     
+glBegin(GL_POINTS);
+      glColor3f(1.0f, 1.0f, 1.0f);
+      glVertex2f(-0.9f, -0.7f);
+      glColor3f(1.0f, 1.0f, 1.0f);
+      glVertex2f(-0.5f, -0.7f);
+      glColor3f(1.0f, 1.0f, 1.0f);
+      glVertex2f(-0.5f, -0.3f);
+      glColor3f(1.0f, 1.0f, 1.0f);
+      glVertex2f(-0.9f, -0.3f);
+glEnd();
+
+glBegin(GL_LINES);
+      glColor3f(0.0f, 1.0f, 0.0f);
+      glVertex2f(-0.7, -0.6);
+      glVertex2f(-0.1, -0.6);
+      glVertex2f(-0.1,  0.0);
+      glVertex2f(-0.7,  0.0);
+    glEnd();
+glFlush();
+}
+
+int main(int argc, char** argv) {
+   glutInit(&argc, argv);
+   glutCreateWindow("Vertex, Primitive & Color");
+   glutInitWindowSize(1240, 1240);
+   glutInitWindowPosition(500, 500);
+   glutDisplayFunc(display);
+   glutMainLoop();
+   return 0;
+}
+
+   
