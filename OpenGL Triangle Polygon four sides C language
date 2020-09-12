@@ -1,0 +1,36 @@
+// I am saving code name as Tripoly.c 
+
+
+#include <windows.h>                                   //Using the code in Codeblocks first ensure the environment variables are set
+#include <GL/glut.h>                                   // Start directly in case of Ubuntu
+void display() {
+   glClear(GL_COLOR_BUFFER_BIT);
+   
+   glBegin(GL_TRIANGLES);
+      glColor3f(0.0f, 0.0f, 1.0f);
+      glVertex2f(0.1f, -0.5f);
+      glVertex2f(0.7f, -0.5f);
+      glVertex2f(0.4f, -0.0f);
+   glEnd();
+
+   glBegin(GL_POLYGON);
+      glColor3f(1.0f, 1.0f, 0.0f);
+      glVertex2f(0.4f, 0.2f);
+      glVertex2f(0.6f, 0.2f);
+      glVertex2f(0.7f, 0.4f);
+      glVertex2f(0.6f, 0.6f);
+      glVertex2f(0.4f, 0.6f);
+      glVertex2f(0.3f, 0.4f);
+   glEnd();   
+   glFlush();
+}
+
+int main(int argc, char** argv) {
+   glutInit(&argc, argv);
+   glutCreateWindow("Vertex, Primitive & Color");
+   glutInitWindowSize(1240, 1240);
+   glutInitWindowPosition(500, 500);
+   glutDisplayFunc(display);
+   glutMainLoop();
+   return 0;
+}
